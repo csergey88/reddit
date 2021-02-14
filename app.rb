@@ -8,7 +8,7 @@ require './helpers'
 
 
 configure do
-    db = Mongo::Client.new(['ruby-db:27107'], database: 'user_posts', heartbeat_frequency: 2)
+    db = Mongo::Client.new(['ruby-db'], database: 'user_posts', heartbeat_frequency: 2)
     set :mongo_db, db[:posts]
     set :comments_db, db[:comments]
     set :users_db, db[:users]
